@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Практическая 13</string>
+    <string name="characterName">Имя персонажа</string>
+    <string name="findQuote">Поиск цитат</string>
+    <string name="error">Ошибка</string>
+</resources>
