@@ -8,13 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AnimeAdapter(private val animeList: List<Anime>): RecyclerView.Adapter<AnimeAdapter.AnimeViewHolder>() {
 
-    private var list : List<Anime> = listOf()
-
-    fun getList() = list
-
-    fun setList(newList : List<Anime>) {
-        list = newList
-    }
+    fun getList() = animeList
 
     class AnimeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun fill(anime: String, character: String, quote: String){

@@ -13,6 +13,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
+import kotlinx.coroutines.DelicateCoroutinesApi
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
@@ -57,14 +58,15 @@ class ExampleInstrumentedTest {
     var activityRule = ActivityTestRule(MainActivity::class.java)
     @Test
     fun test() {
-        onView(withId(R.id.editTextCharacter)).perform(ViewActions.typeText("Chiaki Nanami"))
+        onView(withId(R.id.editTextCharacter)).perform(ViewActions.typeText("Saitama"))
         onView(withId(R.id.buttonFind)).perform(ViewActions.click())
-        val animeStorage = Anime("Danganronpa 3: The End of Kibougamine Gakuen - Zetsubou-hen", "Chiaki Nanami",
-            "It doesn't make a difference whether you have a talent or not. I mean, that isn't the end goal. You have greater freedom that we do. All I have are games. But you can go anywhere and become anything.")
+        val animeStorage = Anime("One Punch Man", "Saitama",
+            "Prophecies don't ever come true.")
         Thread.sleep(10000)
         onView(withId(R.id.recyclerViewQuotes)).check(matches(test(animeStorage)))
     }
 
+    @DelicateCoroutinesApi
     @Test
     fun test1() {
         Thread.sleep(1000)
