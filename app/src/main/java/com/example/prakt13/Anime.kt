@@ -9,8 +9,3 @@ data class Anime(
     var character: String? = null,
     var quote: String? = null
 )
-
-interface APIAnime {
-    @GET("character")
-    fun getAnime(@Query("name") charQuote: String): Call<MutableList<Anime>>
-}

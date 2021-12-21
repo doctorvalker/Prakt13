@@ -4,7 +4,7 @@ import androidx.room.*
 
 @Entity
 data class DataBaseModel(
-    @ColumnInfo(name = "anime") val anime: String,
+    @ColumnInfo(name="anime") val anime: String,
     @ColumnInfo(name="character") val character: String,
     @ColumnInfo(name="quote") val quote: String
 ) {
@@ -22,6 +22,9 @@ interface DBDao {
 
     @Query ("DELETE FROM DataBaseModel")
     fun deleteAll()
+
+    @Delete
+    fun delete(dataBaseModel: DataBaseModel )
 }
 
 @Database(entities = [DataBaseModel::class], version = 1)
